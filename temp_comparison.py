@@ -20,8 +20,8 @@ ax1.plot(sw["DATE"], sw.iloc[:, sw_tmin], c="blue")
 ax1.fill_between(
     sw["DATE"], sw.iloc[:, sw_tmax], sw.iloc[:, sw_tmin], facecolor="lightblue"
 )
-# this needs to be made with index value from csv file
-ax1.set_title("SITKA AIRPORT, AK US")
+# sw title using index values
+ax1.set_title(sw.iloc[0, 1])
 
 # plotting Deat valley
 ax2.plot(dv["DATE"], dv.iloc[:, dv_tmax], c="red")
@@ -30,16 +30,16 @@ ax2.fill_between(
     dv["DATE"], dv.iloc[:, dv_tmax], dv.iloc[:, dv_tmin], facecolor="lightblue"
 )
 
-# this needs to be made with index value from csv file
-ax2.set_title("DEATH VALLEY, CA US")
+# dv title using index values
+ax2.set_title(dv.iloc[0, 1])
 
 # x axis
 ax1.xaxis.set_major_locator(plt.MaxNLocator(7))
 ax2.xaxis.set_major_locator(plt.MaxNLocator(7))
 
-# title needs to also be automatic
+# overall title using the index values
 fig.suptitle(
-    "Temperature Comparison between SITKA AIRPORT, AK US and DEATH VALLEY, CA US"
+    "Temperature Comparison between " + sw.iloc[0, 1] + " and " + dv.iloc[0, 1]
 )
 
 # plot

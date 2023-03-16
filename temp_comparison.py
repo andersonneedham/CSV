@@ -34,9 +34,10 @@ ax2.fill_between(
 ax2.set_title(dv.iloc[0, 1])
 
 # x axis
+ax1.set_xticklabels(sw["DATE"])
+ax2.set_xticklabels(dv["DATE"])
 ax1.xaxis.set_major_locator(plt.MaxNLocator(7))
 ax2.xaxis.set_major_locator(plt.MaxNLocator(7))
-
 # overall title using the index values
 fig.suptitle(
     "Temperature Comparison between " + sw.iloc[0, 1] + " and " + dv.iloc[0, 1]

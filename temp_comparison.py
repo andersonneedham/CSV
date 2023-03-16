@@ -2,14 +2,16 @@ import matplotlib.pyplot as plt
 import pandas as pd
 
 # open csv
-dv = pd.read_csv("death_valley_2018_simple.csv")
 sw = pd.read_csv("sitka_weather_2018_simple.csv")
+dv = pd.read_csv("death_valley_2018_simple.csv")
+
 
 # automatic index
-dv_tmax = dv.columns.get_loc("TMAX")
-dv_tmin = dv.columns.get_loc("TMIN")
 sw_tmax = sw.columns.get_loc("TMAX")
 sw_tmin = sw.columns.get_loc("TMIN")
+dv_tmax = dv.columns.get_loc("TMAX")
+dv_tmin = dv.columns.get_loc("TMIN")
+
 
 # figure
 fig, (ax1, ax2) = plt.subplots(2, 1, figsize=(10, 10))

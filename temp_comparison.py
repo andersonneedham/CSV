@@ -22,24 +22,25 @@ ax1.plot(sw["DATE"], sw.iloc[:, sw_tmin], c="blue")
 ax1.fill_between(
     sw["DATE"], sw.iloc[:, sw_tmax], sw.iloc[:, sw_tmin], facecolor="lightblue"
 )
-# sw title using index values
+# sitka title using index values
 ax1.set_title(sw.iloc[0, 1])
 
-# plotting Deat valley
+# plotting Death valley
 ax2.plot(dv["DATE"], dv.iloc[:, dv_tmax], c="red")
 ax2.plot(dv["DATE"], dv.iloc[:, dv_tmin], c="blue")
 ax2.fill_between(
     dv["DATE"], dv.iloc[:, dv_tmax], dv.iloc[:, dv_tmin], facecolor="lightblue"
 )
 
-# dv title using index values
+# death valley title using index values
 ax2.set_title(dv.iloc[0, 1])
 
 # x axis
-ax1.set_xticklabels(sw["DATE"])
-ax2.set_xticklabels(dv["DATE"])
+ax1.set_xticks(sw["DATE"])
+ax2.set_xticks(dv["DATE"])
 ax1.xaxis.set_major_locator(plt.MaxNLocator(7))
 ax2.xaxis.set_major_locator(plt.MaxNLocator(7))
+
 # overall title using the index values
 fig.suptitle(
     "Temperature Comparison between " + sw.iloc[0, 1] + " and " + dv.iloc[0, 1]
